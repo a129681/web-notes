@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 创建ajax 对象
+         * @type {XMLHttpRequest}
+         */
+        var oAjax = null;
+
+        if(XMLHttpRequest){
+            oAjax = new XMLHttpRequest();
+        }else{
+            /**
+             * 兼容ie6*/
+            oAjax = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+
+        /**
+         * 设置请求行，open的两个参数分别为请求方式和请求url和是否异步.
+         * 建立连接
+         */
+        oAjax.open("post","./src/test.php",true);
+
+
+        /**
+         * 设置请求头
+         */
+        oAjax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        /**
+         * 设置请求主体
+         * 发送信息
+         */
+        oAjax.send("username=test&userkey=1218?");
+        /**
+         * 出力接收到的信息
+         */
+        oAjax.onreadystatechange=function(){
+            if(oAjax.readyState==4&&oAjax.status==200)
+            {
+                console.log(oAjax.responseText);
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
