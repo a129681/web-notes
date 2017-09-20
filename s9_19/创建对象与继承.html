@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 最佳创建对象方式
+         * @param name
+         * @constructor
+         */
+        /*function Person(name) {
+            this.name =name;
+            if(typeof this.sayName !="function")
+            {
+                this.sayName=function () {
+                    console.log(this.name);
+                }
+            }
+
+        }*/
+
+        function Person(name){
+            this.name = name;
+        }
+
+        Person.prototype.sayName=function(){
+         alert(this.name);
+        }
+
+//        var a =new Person("wang");
+//        var b = new Person("beijing");
+        //a.sayName();
+        //b.sayName();
+        /**
+         * 重写原型对象
+         */
+//        function Person(name) {
+//            this.name =name;
+//        }
+//        Person.prototype={
+//            constructor:Person,
+//          sayName:function () {
+//              alert(this.name);
+//          }
+//        };
+//        var c = new Person("w");
+//        console.log(c.__proto__);
+//        c.sayName();
+//        alert(Person.prototype.constructor);//==>指向object
+        /**
+         * 借用构造函数式继承
+         * 优点可以传递参数，缺点是方法都在构造函数中定义
+         * @param name
+         * @constructor
+         */
+         /*
+            call()函数的功能类似于student.m=Person,其中m是一个临时属性，调用后删除
+         */
+//        function Student(name){
+//            Person.call(this,name);
+//        }
+//
+//        var o = new Student("wang");
+//
+//        o.sayName();
+//        console.log(o);
+        /**
+         * 组合继承
+         * 使用原型链对属性和方法进行继承，而利用构造函数则对实例属性进行继承
+         */
+        function Student(name,lv){
+            Person.call(this,name);
+            this.level = lv;
+        }
+        Student.prototype=new Person();
+        Student.prototype.constructor = Person();
+
+        var o = new Student("le",3);
+
+        
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
