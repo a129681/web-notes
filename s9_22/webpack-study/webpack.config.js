@@ -18,6 +18,20 @@ module.exports ={
 			inject:'head',
 			title:'make in webpack',
 			date:new Date() 
+		}),
+		new htmlWebpackPlugin({
+			filename:'a.html',
+			template:'index.html',
+			inject:'head',
+			title:'make in webpack a',
+			date:new Date() 
+		}),
+		new htmlWebpackPlugin({
+			filename:'b.html',
+			template:'index.html',
+			inject:'head',
+			title:'make in webpack b.html',
+			date:new Date() 
 		})
 	]
 }
