@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+</head>
+<body>
+    <my-test></my-test>
+    <div id="app">
+        <table>
+            <tr is="my-test"></tr>
+        </table>
+    </div>
+</body>
+<script>
+    Vue.component('my-test',{
+        template:`<div><input type='text' v-model:value='content'>
+        <input type='button' value='提交' @click='valSet'>
+        <test-son :inputCont='listArr' @childInfo="getInfo"></test-son></div>`,
+        data:function(){
+            return{
+                content:'hello world',
+                listArr:[]
+            };
+        },
+        methods:{
+            valSet:function(el){
+                this.listArr.push(this.content);
+            },
+            getInfo:function(msg){
+                this.listArr.splice(msg,msg+1,'')
+            }
+        }
+    });
+
+    Vue.component('test-son',{
+        props:['inputCont'],
+        data:function(){
+            return {
+                sonArr:[]
+            }
+        },
+        methods:{
+            unshiftData:function(el){
+                var oLi = el;
+                this.$emit('childInfo',oLi);
+            },
+            strLength:function(str){
+                return str.length;
+            }
+        },
+        template:`<ul ><li v-for='(item,index) in inputCont'  v-if="strLength(item)" ref="p">{{item}}
+        <a href='javascript:void(0)'  v-if='inputCont.length > 0' @click.stop="unshiftData(index)">删除</a></li></ul>`
+    });
+    var app = new Vue({
+       el:"#app"
+    });
+</script>
+
+</html>

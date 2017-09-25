@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <test-subper>
+            <test-sub></test-sub>
+        </test-subper>
+    </div>
+</body>
+
+<script>
+
+
+    Vue.component('test-subper',{
+        template:`
+            <div>
+                <p>{{pTitle}}</p>
+                不知道
+            </div>
+        `,
+        data:function(){
+            return {
+                pTitle:'怎么办'
+            };
+        }
+    });
+
+    Vue.component("test-sub",{
+        template:`
+            <solt>这是多余的吗</solt>
+        `
+    });
+
+    var app =new Vue({
+        el:"#app"
+    });
+</script>
+
+</html>
