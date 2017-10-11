@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #demo{
+            width:100px;
+            height:100px;
+            background:red;
+            animation:blockfun 10s linear 1s infinite;
+            position:relative;
+        }
+        @keyframes blockfun {
+            0% {background:red;width:100px;height:100px;left:0;}
+            10% {background:blue;border-radius: 10%;left:100px;}
+            20% {background:purple;border-radius: 20%;left:200px;}
+            30% {background:green;border-radius: 30%;left:300px;}
+            40% {background:black;border-radius: 40%;left:400px;}
+            50% {background:gray;border-radius: 50%;left:500px;}
+            60% {background:yellow;border-radius: 60%;left:600px;}
+            70% {background:white;border-radius: 70%;left:700px;}
+            80% {background:pink;border-radius: 80%;left:800px;}
+        }
+
+        #democont{
+            column-count:3;
+            column-gap:2px;
+            width:300px;height:600px;background:red;
+            column-rule-style: solid;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <div id="democont">
+        1987年，Photoshop的主要设计师托马斯·诺尔买了一台苹果计算机（MacPlus）用来帮助他的博士论文。
+        与此同时，Thomas发现当时的苹果计算机无法显示带灰度的黑白图像，因此他自己写了一个程序Display；
+        而他兄弟约翰·诺尔这时在导演乔治·卢卡斯的电影特殊效果制作公司Industry Light Magic工作，对Thomas的程序很感兴趣。
+        两兄弟在此后的一年多把Display不断修改为功能更为强大的图像编辑程序，经过多次改名后，在一个展会上接受了一个参展观众的建议，
+        把程序改名为Photoshop。此时的Display/Photoshop已经有Level、色彩平衡、饱和度等调整。
+        此外John写了一些程序，后来成为插件（Plug-in）的基础。
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        #demo{
+            border:1px solid #000;
+            margin:0 auto;
+            width:400px;
+        }
+        #demo div{
+            width:200px;
+            height:200px;
+            /*background: red;*/
+            margin:100px auto;
+            /*border-radius:30%   20px/4px;*/
+
+            /*<length>①：第1个长度值用来设置对象的阴影水平偏移值。可以为负值*/
+            /*<length>②：第2个长度值用来设置对象的阴影垂直偏移值。可以为负值*/
+            /*<length>③：如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值*/
+            /*<length>④：如果提供了第4个长度值则用来设置对象的阴影外延值。可以为负值*/
+            /*<color>：设置对象的阴影的颜色。*/
+            /*box-shadow:10px 20px 20px 10px #000;*/
+            border-width: 10px;
+            border-color:#000;
+            border-style:solid;
+            /*text-transform:uppercase;*/
+            /*word-wrap:normal;*/
+            /*border-image: url(img/web.jpg) 2 9 fill repeat;*/
+            background-image:url(img/web.jpg);
+            background-size:200px 100px;
+            /*<length>用长度值指定背景图像大小。不允许负值。*/
+            /*<percentage>用百分比指定背景图像大小。不允许负值。*/
+            /*auto：背景图像的真实大小。*/
+            /*cover：将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。*/
+            /*contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。*/
+            background-repeat:no-repeat;
+            background-origin:border-box;
+            background-clip:content-box;
+
+        }
+
+        #demo1{
+            width:300px;
+            height:300px;
+            /*线性渐变*/
+            border:1px solid #000;
+            background:-webkit-linear-gradient(red,blue);
+            background: -webkit-linear-gradient(left,red,blue);
+            background: -webkit-linear-gradient(left top,red,blue);
+            background:-webkit-linear-gradient(60deg,red,blue,green);
+            background:-webkit-linear-gradient(120deg,rgba(255,0,0,0.5),rgba(255,0,0,1));
+            /*径向渐变*/
+            background:-webkit-radial-gradient(red,green,blue);
+            background:-webkit-radial-gradient(circle,red,yellow,blue)
+        }
+        #text-demo{
+            width:500px;
+            height:500px;
+            border:1px solid #000;
+            font-size:30px;
+            line-height:30px;
+            /*文字阴影*/
+            text-shadow:5px 5px 5px #000;
+
+        }
+
+        @font-face
+        {
+            font-family: myFirstFont;
+            src: url(sansation_light.woff);
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <div>你好我是css3aaaaa</div>
+    </div>
+    <div id="demo1"></div>
+    <div id="text-demo">
+        text-shadow
+    </div>
+</body>
+</html>

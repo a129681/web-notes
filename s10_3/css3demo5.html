@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #demo{
+            resize:both; /*和overflow:auto;同时使用起作用*/
+            overflow:auto;
+            box-sizing:border-box;
+            width:300px;height:300px;
+            background:red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDemo = document.getElementById("demo");
+            var oWidth = window.getComputedStyle(oDemo,null)["width"];
+            alert(oWidth);
+        }
+    </script>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>
